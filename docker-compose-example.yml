@@ -1,0 +1,30 @@
+version: '3.5'
+
+services:
+  blogspam:
+    image: pinidh/blogspam
+    container_name: blogspam
+    restart: unless-stopped
+    ports:
+    - "9999:9999"
+    networks:
+      bridge:
+      internal:
+
+  redis:
+    image: redis:5-alpine
+    container_name: blogspam_redis
+    restart: unless-stopped
+    volumes:
+    - redis:/data
+    networks:
+      internal:
+
+volumes:
+  redis:
+
+networks:
+  bridge:
+    name: blogspam_bridge
+  internal:
+    internal: true
