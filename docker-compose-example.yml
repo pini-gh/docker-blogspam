@@ -2,11 +2,14 @@ version: '3.5'
 
 services:
   blogspam:
-    image: pinidh/blogspam
+    image: pinidh/blogspam@v1.1.0
     container_name: blogspam
     restart: unless-stopped
     ports:
     - "9999:9999"
+    environment:
+    # default
+    - REVERSE_PROXY=false
     networks:
       bridge:
       internal:

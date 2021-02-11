@@ -8,7 +8,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
   golang \
   git
 
-RUN GO111MODULE=on go get github.com/pini-gh/blogspam-api
+RUN GO111MODULE=on go get github.com/pini-gh/blogspam-api@v1.1.0
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
