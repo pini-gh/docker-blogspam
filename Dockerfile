@@ -1,4 +1,4 @@
-FROM pinidh/baseimage-debian-testing:1.0.0
+FROM pinidh/baseimage-debian-bullseye:2021-11-07
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
@@ -8,7 +8,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
   golang \
   git
 
-RUN GO111MODULE=on go get github.com/pini-gh/blogspam-api@v1.1.0
+RUN GO111MODULE=on go get github.com/pini-gh/blogspam-api@v1.1.1
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
