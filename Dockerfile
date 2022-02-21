@@ -1,4 +1,4 @@
-FROM pinidh/baseimage-debian-bullseye:2021-11-07
+FROM pinidh/baseimage-debian-bullseye:2022-02-20
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
